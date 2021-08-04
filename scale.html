@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas scale 사용하기</title>
+    <style>
+        body canvas {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas> <!-- 크기를 지정하지 않은 캔버스의 크기는 150 x 300 이다 ^.^-->
+    <script>
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        ctx.scale(-1, 1);
+        ctx.font = '48px serif';
+        ctx.fillText('로꾸거 로꾸거 로꾸거 말해말', -400, 60);
+        ctx.setTransform(1, 0, 0, 1, 0, 0); // setTransform이 헷갈리면 찾아보자
+
+    </script>
+</body>
+
+</html>
